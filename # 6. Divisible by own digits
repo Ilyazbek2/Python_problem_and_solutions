@@ -1,0 +1,28 @@
+a, b = int(input()), int(input())
+numbers = [i for i in range(a, b+1) if '0' not in str(i) and all(i % int(d) == 0 for d in str(i))]
+print(*numbers)
+
+# 7. IP validation
+ip = input()
+octets = ip.split('.')
+valid = all(o.isdigit() and 0 <= int(o) <= 255 for o in octets)
+print(valid)
+
+# 8. Vector within sphere check
+abscissas = list(map(float, input().split()))
+ordinates = list(map(float, input().split()))
+applicates = list(map(float, input().split()))
+inside_sphere = all(x**2 + y**2 + z**2 <= 4 for x, y, z in zip(abscissas, ordinates, applicates))
+print(inside_sphere)
+
+# 9. Countries info print
+countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
+capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
+population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
+
+for country, capital, pop in zip(countries, capitals, population):
+    print(f"{capital} is the capital of {country}, population equal {pop} people.")
+
+# 10. RGB opposite color
+r, g, b = map(int, input().split())
+print(255 - r, 255 - g, 255 - b)
