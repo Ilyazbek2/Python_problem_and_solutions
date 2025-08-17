@@ -1,0 +1,14 @@
+Save this file as daily_exercises.py.
+
+Initialize a Git repository (if you haven't already):
+
+git init
+git add daily_exercises.py
+git commit -m "Add daily Python exercises solutions"
+
+
+Connect to your GitHub repository and push:
+
+git remote add origin <your_repo_url>
+git branch -M main
+git push -u origin main
