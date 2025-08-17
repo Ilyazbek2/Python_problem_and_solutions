@@ -1,0 +1,30 @@
+def generate_letter(mail, name, date, time, place, teacher='Тимур Гуев', number=17):
+    return f"""To: {mail}
+Приветствую, {name}!
+Вам назначен экзамен, который пройдет {date}, в {time}.
+По адресу: {place}. 
+Экзамен будет проводить {teacher} в кабинете {number}. 
+Желаем удачи на экзамене!"""
+
+# Example usage
+print(generate_letter('lara@yandex.ru', 'Лариса', '10 декабря', '12:00', 'Часова 23, корпус 2'))
+print(generate_letter('lara@yandex.ru', 'Лариса', '10 декабря', '12:00', 
+                      'Часова 23, корпус 2', 'Василь Ярошевич', 23))
+
+# 4. Students check - all() and any()
+n = int(input("Number of classes: "))
+all_classes_ok = True
+for _ in range(n):
+    k = int(input())
+    class_grades = [input().split()[1] for _ in range(k)]
+    if not any(grade == '5' for grade in class_grades):
+        all_classes_ok = False
+print("YES" if all_classes_ok else "NO")
+
+# 5. Password check
+password = input("Enter password: ")
+if len(password) >= 7 and any(c.isdigit() for c in password) \
+   and any(c.isupper() for c in password) and any(c.islower() for c in password):
+    print("YES")
+else:
+    print("NO")
